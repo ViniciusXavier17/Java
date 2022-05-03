@@ -3,20 +3,19 @@ package Conta;
 import java.util.Random;
 
 public class ContaCorrente {
-
+    private Pessoa nomeCorretista;
     private int numeroConta;
-    private String nomeCorretista;
     private int numeroAgencia;
     private double saldo;
 
     //Construtor
-    public  ContaCorrente(){
+    /*  ContaCorrente(){
         Random gerador = new Random();
         this.numeroConta = gerador.nextInt(50000); // numero da conta é gerada de forma aleatoria
         this.saldo = 0;  // toda conta começa com saldo 0
 
 
-    }
+    }*/
 
     //get de numeroConta
     public int getNumeroConta(){
@@ -24,10 +23,10 @@ public class ContaCorrente {
     }
 
      //get e set de nomeCorretista
-     public void setNomeCorretista(String nc){
+     public void setNomeCorretista(Pessoa nc){
         this.nomeCorretista = nc;
     }
-    public String getNomeCorretista(){
+    public Pessoa getNomeCorretista(){
 
         return this.nomeCorretista;
     }
@@ -47,6 +46,18 @@ public class ContaCorrente {
     }
     public double getSaldo(){
         return this.saldo;
+    }
+
+
+
+    public void abirContaCorrente(Pessoa nc, int na){
+        nomeCorretista = nc;
+        Random gerador = new Random();
+        this.numeroConta = gerador.nextInt(50000); // numero da conta é gerada de forma aleatoria
+        setNumeroAgencia(na);
+        setSaldo(0);  // toda conta assim começacom saldo 0
+        
+
     }
     
 
