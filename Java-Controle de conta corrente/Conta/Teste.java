@@ -1,16 +1,30 @@
 package Conta;
 
-/* O codigo ainda está inconpleto */
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+/* 
+
+
+
+O codigo ainda está inconpleto 
+
+
+
+
+*/
 
 public class Teste {
 
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
-        ContaCorrente p1 = new ContaCorrente();
-        int menu =0;
+       Scanner teclado = new Scanner(System.in);
+       ContaCorrente conta = new ContaCorrente();;
+       List<ContaCorrente> listaconta = new ArrayList<ContaCorrente>();
+       int menu =0;
+       Pessoa p1 = new Pessoa();
+       p1.setNome("vinicius");
 
 
 
@@ -21,32 +35,28 @@ public class Teste {
             System.out.println("[3] Sacar");
             System.out.println("[4] Consultar saldo"); 
             System.out.println("[5] Transferencia entre contas");
-           // System.out.println(" [6] Listagens de contas abertas");
-            System.out.println("[7] Sair");
+            System.out.println("[6] Sair");
             System.out.print("Digite uma das opções: ");
             menu = Integer.parseInt(teclado.nextLine());
             
             switch (menu) {
                 case 1:
-            
-                System.out.print("Informe o seu nome: ");
-                p1.setNomeCorretista(teclado.nextLine());
-
-                System.out.print("informe o numero da agencia: ");
-                p1.setNumeroAgencia(Integer.parseInt(teclado.nextLine()));
-                break;
+               //conta = new ContaCorrente();
+                conta.abrirContaCorrente(p1, 1234);
+                listaconta.add(conta);
                     
             }
 
             
-        } while (menu != 7);
-        if(menu == 7){
+        } while (menu != 6);
+        if(menu == 6){
             System.out.println("obrigado por usar nosso banco, tenha um Bom Dia!");
         }
-
+        
+        
+        System.out.println(listaconta.toString());
         teclado.close();    
+
     }
 
-    
-    
 }

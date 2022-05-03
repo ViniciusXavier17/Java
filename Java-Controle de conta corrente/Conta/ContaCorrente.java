@@ -1,21 +1,13 @@
 package Conta;
 
+import java.util.List;
 import java.util.Random;
 
-public class ContaCorrente {
+public class ContaCorrente implements InterfaceContaCorrente {
     private Pessoa nomeCorretista;
     private int numeroConta;
     private int numeroAgencia;
     private double saldo;
-
-    //Construtor
-    /*  ContaCorrente(){
-        Random gerador = new Random();
-        this.numeroConta = gerador.nextInt(50000); // numero da conta é gerada de forma aleatoria
-        this.saldo = 0;  // toda conta começa com saldo 0
-
-
-    }*/
 
     //get de numeroConta
     public int getNumeroConta(){
@@ -49,22 +41,48 @@ public class ContaCorrente {
     }
 
 
-
-    public void abirContaCorrente(Pessoa nc, int na){
-        nomeCorretista = nc;
+    @Override
+    public void abrirContaCorrente(Pessoa nc, int na){
+        setNomeCorretista(nc);
         Random gerador = new Random();
         this.numeroConta = gerador.nextInt(50000); // numero da conta é gerada de forma aleatoria
         setNumeroAgencia(na);
         setSaldo(0);  // toda conta assim começacom saldo 0
         
-
     }
-    
 
-    public void Infomacoes(){
+    @Override
+    public void Depositar() {
+       
+        
+    }
+
+    @Override
+    public void Sacar() {
+       
+        
+    }
+
+    @Override
+    public void ConsultarSaldo() {
+        
+        
+    }
+
+    @Override
+    public void transferir() {
+       
+        
+    }
+
+
+
+
+
+   /* public void Infomacoes(List listaconta){
         System.out.println("nome do corretista: "+getNomeCorretista());
         System.out.println("numero da conta: "+ getNumeroAgencia());
         System.out.println("Numero da agencia: "+ getNumeroAgencia());
         System.out.println("Saldo da conta: "+ getSaldo());
-    }
+    }*/
 }
