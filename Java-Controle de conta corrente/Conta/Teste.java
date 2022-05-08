@@ -20,11 +20,9 @@ public class Teste {
     public static void main(String[] args) {
 
        Scanner teclado = new Scanner(System.in);
-       ContaCorrente conta = new ContaCorrente();;
+       ContaCorrente conta;
        List<ContaCorrente> listaconta = new ArrayList<ContaCorrente>();
        int menu =0;
-       Pessoa p1 = new Pessoa();
-       p1.setNome("vinicius");
 
 
 
@@ -37,13 +35,15 @@ public class Teste {
             System.out.println("[5] Transferencia entre contas");
             System.out.println("[6] Sair");
             System.out.print("Digite uma das opções: ");
-            menu = Integer.parseInt(teclado.nextLine());
+            //menu = Integer.parseInt(teclado.nextLine());
+            menu = teclado.nextInt();
             
             switch (menu) {
                 case 1:
-               //conta = new ContaCorrente();
-                conta.abrirContaCorrente(p1, 1234);
+                conta = new ContaCorrente();
+                conta.abrirContaCorrente();
                 listaconta.add(conta);
+                
                     
             }
 
@@ -54,7 +54,7 @@ public class Teste {
         }
         
         
-        System.out.println(listaconta.toString());
+        System.out.println(listaconta.toArray());
         teclado.close();    
 
     }

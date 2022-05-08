@@ -2,7 +2,7 @@ package Conta;
 
 public interface InterfaceContaCorrente {
 
-    public void abrirContaCorrente(Pessoa nc, int na);
+    public void abrirContaCorrente();
     public void Depositar();
     public void Sacar();
     public void ConsultarSaldo();
